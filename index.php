@@ -51,7 +51,7 @@
 	</div>
 	<div id="login">
         
-		<form action="/APIREST_5TID1/auth.php" method="POST">  
+		<form action="auth.php" method="POST">  
 			<div id="params">
 				<div class="input-group">
 				    <span class="input-group-text">Usuario</span>

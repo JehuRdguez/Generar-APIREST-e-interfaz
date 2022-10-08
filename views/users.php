@@ -1,5 +1,10 @@
 <?php  
 	session_start();
+
+  require_once '../clases/auth.class.php';
+  require_once '../clases/users.class.php';
+  require_once '../clases/conexion/conexion.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -29,11 +34,34 @@
 <body>
 	<strong><center><h1>Bienvenido <?php echo $_SESSION['NombreCompleto']; ?> <i> </i><hr></h1></center></strong>
 	<div id="buttons">
-		<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#AddUser">+ Agregar Usuario +</button>
+		<button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#AddUser">+ Agregar Usuario +</button>
 	</div>
-	<div id="tblUsuarios">
-		<h3>Generar la tabla de usuarios y que muestre la información de todos los usuarios, utilizando APIREST para extraer la información de los usuarios</h3>
-	</div>
+
+  <!--TABLA DE USUARIOS-->
+  <div class="container">
+    <br>
+    <table class="table table-bordered " cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>RFC</th>
+          <th>Nickname</th>
+          <th>Tipo de usuario</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      <?php
+      require_once '../APIREST_users/users.php';
+      ?>
+
+      </tbody>
+    </table>
+  </div>
+
+
 </body>
 
 
@@ -50,7 +78,7 @@
 
       <!-- Modal body -->
       <div class="modal-body" class="flex-container">
-        <form action="/APIREST_5TID1/APIREST/users.php" method = "POST">
+        <form action="/5TID1/Generar-APIREST-e-interfaz/APIREST_users/users.php" method = "POST">
           <div class="input-group p-2">
             <span class="input-group-text">Nombre</span>
             <input type="text" class="form-control" placeholder="Nombre" name="nw_userName">
@@ -94,7 +122,7 @@
 	function clean(){
 		document.getElementByName('nw_userName').value = " ";
 		document.getElementByName('nw_apellidos').value = " ";
-		document.getElementByName('nw_rfc');.value = " ";
+		document.getElementByName('nw_rfc').value = " ";
 		document.getElementByName('nw_nickName').value = " ";
 		document.getElementByName('userType').value = " ";
 		alert("ALL CLEAN");

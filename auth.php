@@ -17,19 +17,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     if($response['status']== "ok"){
         session_start();
         $_SESSION['NombreCompleto'] = $data['Name'] . " " .$data['LastName'];
-        $_SESSION['Nombre'] = $data['Name'];
-        $_SESSION['userId'] = $data['userId'];
-        $_SESSION['personId'] = $data['personId'];
-        $_SESSION['Lastname'] = $data['Lastname'];
-        $_SESSION['RFC'] = $data['RFC'];
-        $_SESSION['user'] = $data['user'];
         $_SESSION['userType'] = $data['userType'];
         $_SESSION['userActive'] = $data['userActive'];
         echo "<script>confirm('$status');</script>";
-        header("Location:/APIREST_5TID1/views/users.php"); // 5TID1/APIREST -> APIREST_5TID1
+        header("Location:/5TID1/Generar-APIREST-e-interfaz/views/users.php"); // 5TID1/APIREST -> APIREST_5TID1
     }else{
         echo "<script>alert('$response');</script>";
-        header("Location:/APIREST_5TID1/index.php"); // 5TID1/APIREST -> APIREST_5TID1
+        header("Location:/5TID1/Generar-APIREST-e-interfaz/index.php"); // 5TID1/APIREST -> APIREST_5TID1
 
     }
 }else{
