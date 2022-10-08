@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $dataArray = $_user->postUser(json_encode($postData));
 
     if ($dataArray){
-        header("Location:/5TID1/APIREST/views/users.php"); 
+        header("Location:/5TID1/Generar-APIREST-e-interfaz/views/users.php"); 
     } else {
         return $_respuestas->err_500();
     }

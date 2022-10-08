@@ -52,6 +52,7 @@ class users extends conexion{
         if($result){
             $respuesta = $_respuestas->response;
             $respuesta["result"] = array("userId" => $result);
+            header("Location:/5TID1/Generar-APIREST-e-interfaz/views/users.php");
         }
     }
     
