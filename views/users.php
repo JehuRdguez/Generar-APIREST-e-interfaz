@@ -81,20 +81,20 @@
         <form action="/5TID1/Generar-APIREST-e-interfaz/APIREST_users/users.php" method = "POST">
           <div class="input-group p-2">
             <span class="input-group-text">Nombre</span>
-            <input type="text" class="form-control" placeholder="Nombre" name="nw_userName">
+            <input type="text" class="form-control" placeholder="Nombre" name="nw_userName" required>
           </div>
 
           <div class="input-group p-2">
             <span class="input-group-text">Apellidos</span>
-            <input type="text" class="form-control" placeholder="Apellidos" name="nw_apellidos">
+            <input type="text" class="form-control" placeholder="Apellidos" name="nw_apellidos" required>
           </div>
           <div class="input-group p-2">
             <span class="input-group-text">RFC</span>
-            <input type="text" class="form-control" placeholder="rfc" name="nw_rfc">
+            <input type="text" class="form-control" placeholder="rfc" name="nw_rfc" required>
           </div>
           <div class="input-group p-2">
             <span class="input-group-text">NickName</span>
-            <input type="text" class="form-control" placeholder="Nombre de Usuario" name="nw_nickName">
+            <input type="text" class="form-control" placeholder="Nombre de Usuario" name="nw_nickName" required>
           </div>
           <label for="userType p-2">Tipo de usuario:</label>
           <select class="form-select mb-3" name="userType">
